@@ -1,0 +1,217 @@
+{
+  "categoria": [
+    {
+      "id": "1",
+      "nome": "Sedan",
+      "logo": "sedan_logo.png"
+    },
+    {
+      "id": "2",
+      "nome": "Hatch",
+      "logo": "hatch_logo.png"
+    },
+    {
+      "id": "3",
+      "nome": "Picape",
+      "logo": "picape_logo.png"
+    },
+    {
+      "id": "4",
+      "nome": "Moto",
+      "logo": "moto_logo.png"
+    },
+    {
+      "id": "5",
+      "nome": "Caminhonete",
+      "logo": "caminhonete_logo.png"
+    }
+  ],
+  "montadora": [
+    {
+      "id": "1",
+      "nome": "Toyota",
+      "nascionalidade": "Japonesa",
+      "logo": "toyota_logo.png"
+    },
+    {
+      "id": "2",
+      "nome": "Ford",
+      "nascionalidade": "Americana",
+      "logo": "ford_logo.png"
+    },
+    {
+      "id": "3",
+      "nome": "Volkswagen",
+      "nascionalidade": "Alemã",
+      "logo": "volkswagen_logo.png"
+    },
+    {
+      "id": "4",
+      "nome": "Honda",
+      "nascionalidade": "Japonesa",
+      "logo": "honda_logo.png"
+    },
+    {
+      "id": "5",
+      "nome": "Chevrolet",
+      "nascionalidade": "Americana",
+      "logo": "chevrolet_logo.png"
+    }
+  ],
+  "veiculo": [
+    {
+      "id": "d200",
+      "modelo": "Onix LTZ Premier",
+      "ano": 2025,
+      "preco": 150000,
+      "descricao": "​O Chevrolet Onix Premier 2025 é a versão topo de linha do hatch compacto da marca, destacando-se por seu pacote completo de tecnologia, segurança e conforto.​\nFipe Carros\n\nMotorização e Desempenho\nEquipado com motor 1.0 turbo flex de três cilindros, o Onix Premier entrega 116 cv de potência e torque de até 16,8 kgfm com etanol. A transmissão é automática de seis marchas, com opção de trocas manuais. A aceleração de 0 a 100 km/h ocorre em 10,1 segundos, e a velocidade máxima é de 187 km/h. ",
+      "cor": "Prata",
+      "quilometragem": 0,
+      "potencia": 120,
+      "motor": "1.0 turbo",
+      "cambio": "Manual",
+      "direcao": "Elétrica",
+      "tracao": "Dianteira",
+      "categoriaId": 1,
+      "montadoraId": 1,
+      "avaliacao": 5,
+      "destaque": true,
+      "disponivel": true,
+      "imagem": [
+        "http://localhost:3037/uploads/1745774001781.jpg",
+        "http://localhost:3037/uploads/1745774001779.jpg",
+        "http://localhost:3037/uploads/1745774001781.jpg",
+        "http://localhost:3037/uploads/1745774001782.jpg",
+        "http://localhost:3037/uploads/1745773996806.jpg",
+        "http://localhost:3037/uploads/1745773996807.jpg",
+        "http://localhost:3037/uploads/1745773996808.jpg",
+        "http://localhost:3037/uploads/1745773996809.jpg"
+      ],
+      "usuarioId": "d201"
+    },
+    {
+      "id": "d454",
+      "modelo": "Onix LTZ Premier",
+      "ano": 2024,
+      "preco": 100000,
+      "descricao": "Teste",
+      "cor": "Branco",
+      "quilometragem": 1000,
+      "potencia": 120,
+      "motor": "1.0 turbo",
+      "cambio": "Manual",
+      "direcao": "Elétrica",
+      "tracao": "Dianteira",
+      "categoriaId": 1,
+      "montadoraId": 2,
+      "avaliacao": 5,
+      "destaque": true,
+      "disponivel": true,
+      "imagem": [
+        "http://localhost:3037/uploads/1745848572210.jpg",
+        "http://localhost:3037/uploads/1745848572212.jpg",
+        "http://localhost:3037/uploads/1745848572214.jpg",
+        "http://localhost:3037/uploads/1745848564335.jpg"
+      ]
+    },
+    {
+      "id": "54ad",
+      "modelo": "Onix LTZ Premier",
+      "ano": 2025,
+      "preco": 100000,
+      "descricao": "afsdaf sdaf",
+      "cor": "Branco",
+      "quilometragem": 1000,
+      "potencia": 120,
+      "motor": "1.0 turbo",
+      "cambio": "Manual",
+      "direcao": "Elétrica",
+      "tracao": "Dianteira",
+      "categoriaId": 1,
+      "montadoraId": 2,
+      "avaliacao": 5,
+      "destaque": true,
+      "disponivel": true,
+      "imagem": [
+        "http://localhost:3037/uploads/1745922400276.jpg",
+        "http://localhost:3037/uploads/1745922400282.jpg",
+        "http://localhost:3037/uploads/1745922400213.jpg",
+        "http://localhost:3037/uploads/1745922400211.jpg",
+        "http://localhost:3037/uploads/1745922400213.jpg",
+        "http://localhost:3037/uploads/1745922400215.jpg",
+        "http://localhost:3037/uploads/1745922400216.jpg",
+        "http://localhost:3037/uploads/1745922400207.jpg"
+      ]
+    }
+  ],
+  "usuario": [
+    {
+      "id": "d201",
+      "email": "camargoliveira@gmail.com",
+      "senha": "1234567",
+      "nome": "Eliton Camargo",
+      "cpf": "123.123.123-55",
+      "telefone": "(14)99687-1111",
+      "foto": "foto_user.png",
+      "perfil": "2"
+    },
+    {
+      "id": "04bc",
+      "nome": "André",
+      "email": "andreyoung@gmail.com",
+      "senha": "123123",
+      "cpf": "12345678910",
+      "telefone": "5513988215486",
+      "foto": "Capturar.PNG",
+      "imagem": [
+        "http://localhost:3037/uploads/1747740285055.PNG"
+      ]
+    },
+    {
+      "id": "1b65",
+      "nome": "enzo bonati",
+      "email": "etec6867@gmail.com",
+      "senha": "engui",
+      "cpf": "55966588725",
+      "telefone": "15996166575",
+      "foto": "C:\\fakepath\\1745773996806.jpg",
+      "imagem": [
+        "http://localhost:3037/uploads/1748340686209.jpg"
+      ]
+    },
+    {
+      "id": "e189",
+      "nome": "enzo bonati",
+      "email": "etec6867@gmail.com",
+      "senha": "engui",
+      "cpf": "55966588725",
+      "telefone": "15996166575",
+      "foto": "C:\\fakepath\\1745773996806.jpg",
+      "imagem": [
+        "http://localhost:3037/uploads/1748340686209.jpg"
+      ]
+    },
+    {
+      "id": "2939",
+      "nome": "enzo bonati",
+      "email": "etec6867@gmail.com",
+      "senha": "engui",
+      "cpf": "55966588725",
+      "telefone": "15996166575",
+      "foto": "C:\\fakepath\\1745773996806.jpg",
+      "imagem": [
+        "http://localhost:3037/uploads/1748340686209.jpg"
+      ]
+    }
+  ],
+  "perfil": [
+    {
+      "id": "1",
+      "nome": "Administrador"
+    },
+    {
+      "id": "2",
+      "nome": "Usuário"
+    }
+  ]
+}
