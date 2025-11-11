@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciar Produtos - Valify</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/admin_products.css">
+
+
+</head>
+<body>
+  <!-- =================== HEADER =================== -->
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.php">
+        <div class="brand-badge">VF</div>
+        <div>Valify <span class="small" style="display:block;margin-top:-2px;">Mercado Online</span></div>
+      </a>
+      <div class="header-actions">
+        <a class="icon-btn" href="shop.php" title="Voltar ao site"><i class="fas fa-home"></i></a>
+        <a class="icon-btn" href="admin.php" title="Painel administrativo"><i class="fas fa-chart-bar"></i></a>
+        <button class="btn primary" onclick="showProductModal()"><i class="fas fa-plus"></i> Novo Produto</button>
+        <a class="btn ghost" href="php/logout.php">Sair</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =================== MAIN =================== -->
+  <main class="container main">
+    <div class="page-header">
+      <h1 class="page-title">Gerenciar Produtos</h1>
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchProducts" placeholder="Buscar produtos...">
+      </div>
+    </div>
+
+    <div class="card">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Categoria</th>
+            <th>Preço</th>
+            <th>Estoque</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="productsTableBody"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- =================== MODAL =================== -->
+  <!-- MANTÉM TODO SEU HTML COMO ESTAVA -->
+<!-- ... (código anterior permanece igual) ... -->
+
+<!-- =================== MODAL =================== -->
+<div id="productModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title" id="modalTitle">Adicionar Novo Produto</h2>
+      <span class="close" onclick="closeModal()">&times;</span>
+    </div>
+    <div class="modal-body">
+      <form id="productForm">
+        <input type="hidden" name="id">
+        <div class="form-grid">
+          <div class="field">
+            <label for="barcode">Código de Barras</label>
+            <input type="text" id="barcode" name="codigo" class="input" placeholder="Digite ou escaneie o código">
+          </div>
+          <div class="field">
+            <label for="productName">Nome do Produto *</label>
+            <input type="text" id="productName" name="nome" class="input" required>
+          </div>
+          <div class="field">
+            <label for="productCategory">Categoria *</label>
+            <select id="productCategory" name="categoria" class="select" required>
+              <option value="">Selecione uma categoria</option>
+              <option value="Hortifruti">Hortifruti</option>
+              <option value="Bebidas">Bebidas</option>
+              <option value="Laticínios">Laticínios</option>
+              <option value="Mercearia">Mercearia</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="price">Preço (R$) *</label>
+            <input type="text" id="price" name="preco" class="input" placeholder="0,00" required>
+          </div>
+          <div class="field">
+            <label for="stockQuantity">Quantidade em Estoque *</label>
+            <input type="number" id="stockQuantity" name="quantidade" class="input" min="0" required>
+          </div>
+          <div class="field">
+            <label for="stockUnit">Unidade *</label>
+            <select name="unidade" id="stockUnit" class="select" required>
+              <option value="">Selecione tipo de unidade</option>
+              <option value="Kg">Kg</option>
+              <option value="G">Gramas</option>
+              <option value="Cx">Caixas</option>
+              <option value="L">Litros</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="productDescription">Descrição</label>
+            <textarea id="productDescription" name="descricao" class="input" rows="3"></textarea>
+          </div>
+          <div class="field">
+            <label for="productImage">URL da Imagem</label>
+            <input type="url" id="productImage" name="imagem" class="input" placeholder="https://exemplo.com/imagem.jpg">
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn ghost" onclick="closeModal()">Cancelar</button>
+          <button type="submit" class="btn primary">Salvar Produto</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- =================== JS =================== -->
+<script src="https://unpkg.com/imask"></script> <!-- ADICIONADO IMask -->
+
+<script>
+  const form = document.getElementById("productForm");
+  const priceInput = document.getElementById("price");
+
+  // Aplicar máscara de moeda brasileira
+  // Máscara para formatar ao estilo Pix: 1 -> 0,01 | 12 -> 0,12 | 123 -> 1,23 etc.
+const priceMask = IMask(priceInput, {
+  mask: 'num', // apelido para o mask
+  blocks: {
+    num: {
+      mask: Number,
+      scale: 2,
+      signed: false,
+      thousandsSeparator: '.',
+      padFractionalZeros: true,
+      normalizeZeros: true,
+      radix: ',',
+      mapToRadix: ['.'],
+      min: 0,
+    }
+  },
+  lazy: false  // Mostra a vírgula e zeros mesmo quando vazio
+});
+
+
+
+  function showProductModal() {
+    form.reset();
+    document.getElementById('modalTitle').textContent = 'Adicionar Novo Produto';
+    form.action = "php/processa_produto.php";
+    document.getElementById('productModal').style.display = 'flex';
+    document.body.style.pointerEvents = 'none';
+    document.body.style.userSelect = 'none';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('productModal').style.display = 'none';
+    document.body.style.pointerEvents = 'auto';
+    document.body.style.userSelect = 'auto';
+    document.body.style.overflow = 'auto';
+  }
+
+  window.onclick = function(event) {
+    if (event.target === document.getElementById('productModal')) closeModal();
+  };
+
+  async function loadProducts() {
+    try {
+      const res = await fetch("php/get_products.php");
+      const data = await res.json();
+      const tbody = document.getElementById("productsTableBody");
+      if (!data.length) {
+        tbody.innerHTML = `<tr><td colspan="6" class="empty-state">
+          <i class="fas fa-box-open"></i>
+          <p>Nenhum produto cadastrado</p>
+          <button class="btn primary" onclick="showProductModal()"><i class="fas fa-plus"></i> Adicionar Produto</button>
+        </td></tr>`;
+        return;
+      }
+      tbody.innerHTML = data.map(prod => `
+        <tr data-id="${prod.id}">
+          <td class="product-cell">
+            <img src="${prod.imagem || 'https://via.placeholder.com/45'}" class="product-img">
+            <div class="product-info">
+              <span class="product-name">${prod.nome}</span>
+              <span class="product-id">#${prod.codigo}</span>
+            </div>
+          </td>
+          <td>${prod.categoria}</td>
+          <td>R$ ${parseFloat(prod.preco).toFixed(2).replace(".", ",")}</td>
+          <td>${prod.estoque}</td>
+          <td><span class="badge ${prod.estoque > 0 ? 'success' : 'danger'}">${prod.estoque > 0 ? 'Disponível' : 'Sem estoque'}</span></td>
+          <td class="action-buttons">
+            <button class="btn small edit" onclick="editProduct(${prod.id})"><i class="fas fa-edit"></i></button>
+            <button class="btn small delete" onclick="deleteProduct(${prod.id})"><i class="fas fa-trash"></i></button>
+          </td>
+        </tr>
+      `).join('');
+    } catch (err) { console.error(err); }
+  }
+
+  document.getElementById("searchProducts").addEventListener("input", function () {
+    const termo = this.value.toLowerCase();
+    document.querySelectorAll("#productsTableBody tr").forEach(tr => {
+      tr.style.display = tr.innerText.toLowerCase().includes(termo) ? "" : "none";
+    });
+  });
+
+  async function deleteProduct(id) {
+    if (!confirm("Tem certeza que deseja excluir este produto?")) return;
+    const formData = new FormData();
+    formData.append("id", id);
+    const res = await fetch("php/delete_product.php", { method: "POST", body: formData });
+    const result = await res.json();
+    if (result.success) {
+      document.querySelector(`tr[data-id='${id}']`)?.remove();
+      alert("Produto excluído com sucesso!");
+    } else alert("Erro ao excluir produto: " + (result.error || "Tente novamente."));
+  }
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    const formData = new FormData(form);
+
+    // Converte para o formato com ponto antes de enviar
+    const preco = priceInput.value.replace(/\./g, "").replace(",", ".");
+    formData.set("preco", preco);
+
+    try {
+      const res = await fetch(form.action, { method: "POST", body: formData });
+      const result = await res.json();
+      if (result.success) {
+        alert("Produto salvo com sucesso!");
+        closeModal();
+        loadProducts();
+      } else alert("Erro: " + (result.error || "Verifique os dados."));
+    } catch (err) {
+      alert("Erro ao enviar o formulário.");
+      console.error(err);
+    }
+  });
+
+  async function editProduct(id) {
+    document.body.style.pointerEvents = 'none';
+    document.body.style.userSelect = 'none';
+    document.body.style.overflow = 'hidden';
+    try {
+      const res = await fetch(`php/get_product_by_id.php?id=${id}`);
+      const produto = await res.json();
+      if (produto.error) { alert("Erro: " + produto.error); return; }
+      form.querySelector("[name='id']").value = produto.id;
+      form.querySelector("[name='codigo']").value = produto.codigo;
+      form.querySelector("[name='nome']").value = produto.nome;
+      form.querySelector("[name='categoria']").value = produto.categoria;
+      form.querySelector("[name='preco']").value = produto.preco.replace(".", ",");
+      form.querySelector("[name='quantidade']").value = produto.estoque;
+      form.querySelector("[name='unidade']").value = produto.unidade || "";
+      form.querySelector("[name='descricao']").value = produto.descricao || "";
+      form.querySelector("[name='imagem']").value = produto.imagem || "";
+      document.getElementById('modalTitle').textContent = "Editar Produto";
+      form.action = "php/update_product.php";
+      document.getElementById('productModal').style.display = 'flex';
+    } catch (err) { alert("Erro ao carregar produto."); console.error(err); }
+  }
+
+  document.addEventListener("DOMContentLoaded", loadProducts);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/*Scroll*/
+::-webkit-scrollbar{ 
+    width: 7px;
+}
+::-webkit-scrollbar-track{ 
+    background: #ecf0f1;
+}
+::-webkit-scrollbar-thumb { 
+    background: #9fa0ff; 
+}
+
+::-webkit-scrollbar-thumb:hover { 
+    background: #1b1b1b; 
+}
+
+/*Menu*/
+nav{
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    position: fixed;
+    display: flex;
+    justify-content: right;
+    font-size: 20px; 
+    transition: ease-in 1s;
+} 
+nav ul{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    list-style: none;
+}
+nav ul li{
+    display: inline-block;
+}
+nav ul li a{
+    padding: 10px;
+    color: #ecf0f1;
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+}
+nav ul:nth-child(1) li a:hover{
+    color: #9fa0ff;
+    background-color: #ecf0f1;
+    border-bottom: 1px solid #8187dc;
+    transform: scale(1.1);
+    transition: 1s;
+}
+nav ul i{
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.747);
+}
+.Tr::before{
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 60%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+}
+.Tr{
+    position: relative;
+}
+/*Box-1*/
+
+.Box-1{
+    width: 100%;
+    height: 600px;
+    top: 0;
+    left: 0;
+    position: relative;
+    background-color: #9fa0ff/*ff4d6d*/;
+}
+.Box-1-1{
+    width: 40%;    
+    position: absolute;
+    text-align: center;
+    margin: 155px 0 0 100px;
+}
+.Box-1 svg{
+    position: absolute;
+    bottom: 0;
+}
+
+/*Box-2*/
+
+.Box-2{
+    width: 100%;
+    height: 100px;
+    Margin-top: 2%;
+    text-align: center;
+    background-color: #ecf0f1;
+    padding: 2%;
+}
+.Box-2 h2{
+    color: #1b1b1b;
+}
+
+
+/*Box-3*/
+.img{
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.Box-3{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #ecf0f1;
+}
+.Box-3-1{
+    width: 320px;
+    height: 320px;
+    margin: 5% 5%;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9fa0ff;
+    font-size: 100px;
+    color: #fff;
+}
+.SubBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    background-color: #8187dc;
+    opacity: 0;
+}
+.SubBox h2, .SubBox p{
+    color: #fff;
+}
+.Box-3-1:hover .SubBox{
+    transform: scale(1.1);
+    transition: 1s;
+    opacity: 1;
+}
+.SubBox3-1{
+    width: 600px;
+    height: 350px;
+    border-radius: 18%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    background-color: transparent;
+}
+.SubBox3-2{
+    width: 450px;
+    height: 450px;
+    display: flex;
+    border-radius: 18%;
+    display: flex;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    flex-direction: column;
+    color: #1b1b1b;
+}
+.img1{
+    width: 100%;
+    height: 600px;
+    top: 0;
+    left: 0;
+    position: relative;
+    background: url('../img/1.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.Box-img{
+    width: 80%;
+    height: 500px;
+    margin: 2% 0 0 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+.cardImg{
+    width: 340px;
+    height: 340px;
+    margin: 2% 1% 0 1% ;
+    background-size: cover;
+    background-position: center;
+}
+.Box-img img{
+    width: 100%;
+    height: 500px;
+}
+
+.Box-footer{
+    width: 100%;
+    height: 150px;
+    position: relative;
+    margin-top: 7%;
+}
+.Box-footer svg{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.DivCol5{
+    width: 20%;
+    margin-top: 4%;
+    border-left: solid 1px rgba(255, 255, 255, 0.747);
+    position: absolute;
+    padding: 0 3%;
+    z-index: 11;
+    display: flex;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.747);
+}
+#DivCol6{
+    width: 60%;
+    text-align: left;
+    margin-left: 20%;
+}

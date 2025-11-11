@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pedido confirmado - Valify</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="index.php">
+      <div class="brand-badge">VF</div>
+      <div>Valify <span class="small" style="display:block;margin-top:-2px;">Mercado Online</span></div>
+    </a>
+    <form class="search" action="shop.php" method="get">
+      <input name="q" placeholder="Buscar produtos... (ex: arroz, leite)" />
+      <button class="btn" type="submit">Buscar</button>
+    </form>
+    <a class="icon-btn" href="shop.php" title="Loja">🛍️</a>
+    <a class="icon-btn badge" href="cart.html" title="Carrinho">
+      🛒
+      <span class="count" id="navCartCount">0</span>
+    </a>
+  </div>
+</header>
+
+  <main class="container center" style="min-height:60vh">
+    <div class="card" style="padding:24px;max-width:620px">
+      <h1>🎉 Pedido confirmado!</h1>
+      <p class="lead">Obrigado por comprar com a Valify. Você receberá um e-mail com o resumo do pedido.</p>
+      <div class="mt-3"><a class="btn" href="index.php">Voltar à loja</a></div>
+    </div>
+  </main>
+  
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="brand"><div class="brand-badge">VF</div>Valify</div>
+      <p class="small mt-3">Seu mercado online com entrega rápida e produtos fresquinhos. Pague com cartão, Pix ou na entrega.</p>
+      <small>© 2025 Valify. Todos os direitos reservados.</small>
+    </div>
+    <div>
+      <h4>Institucional</h4>
+      <ul style="list-style:none;padding:0;margin:10px 0 0;line-height:1.9">
+        <li><a href="#">Sobre nós</a></li>
+        <li><a href="#">Trabalhe conosco</a></li>
+        <li><a href="#">Política de privacidade</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Ajuda</h4>
+      <ul style="list-style:none;padding:0;margin:10px 0 0;line-height:1.9">
+        <li><a href="cart.html">Carrinho</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+        <li><a href="#">Suporte</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

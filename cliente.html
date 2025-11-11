@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Área do Cliente - Valify</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    // Verifica se está logado via PHP session
+    fetch('php/check-auth.php')
+        .then(response => response.json())
+        .then(data => {
+            if (!data.loggedIn) {
+                window.location.href = "login.html";
+            } else if (data.userType === 'empresa' || data.userType === 'admin') {
+                // Se for empresa/admin tentando acessar área do cliente, redireciona
+                window.location.href = "admin.php";
+            }
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            window.location.href = "login.html";
+        });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="shop.php">
+      <div class="brand-badge">VF</div>
+      <div>Valify <span class="small" style="display:block;margin-top:-2px;">Mercado Online</span></div>
+    </a>
+      <div class="spacer"></div>
+      <a class="btn ghost" href="shop.php">Ir para a Loja 🛍️</a>
+      <a class="btn" href="php/logout.php">Sair</a> <!-- Alterado para link direto -->
+    </div>
+  </header>
+  <main class="container">
+    <h1 class="mt-5">Bem-vindo à sua área de cliente!</h1>
+    <p>Aqui você pode acessar promoções, ver pedidos e muito mais.</p>
+  </main>
+</body>
+</html>

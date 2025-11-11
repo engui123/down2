@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Valify - Explorar</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  
+<header class="header">
+  <div class="container nav">
+    <a class="brand">
+      <div class="brand-badge">VF</div>
+      <div>Valify <span class="small" style="display:block;margin-top:-2px;">Mercado Online</span></div>
+    </a>
+    <form class="search" action="#" method="get">
+      <input name="q" placeholder="Buscar mercados ou novidades..." />
+      <button class="btn" type="submit">Buscar</button>
+    </form>
+    <a class="btn ghost" href="#" onclick="openLogin()">Entrar</a>
+    <a class="btn" href="#" onclick="openRegister()">Cadastrar</a>
+  </div>
+</header>
+
+<main class="container">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="card">
+        <span class="badge">Novidade</span>
+        <h1 style="margin:6px 0 10px">Explore mercados e ofertas, <span style="color:var(--brand)">sem sair de casa</span>.</h1>
+        <p class="lead">Descubra mercados parceiros, novidades e vantagens exclusivas. Para ver os produtos, entre na sua conta.</p>
+        <div class="kpis">
+          <div class="kpi"><div class="small">Mercados parceiros</div><h3>150+</h3></div>
+          <div class="kpi"><div class="small">Clientes ativos</div><h3>30 mil+</h3></div>
+          <div class="kpi"><div class="small">Avaliação</div><h3>4.9/5</h3></div>
+        </div>
+        <div class="mt-4 flex">
+          <a class="btn" href="#" onclick="openLogin()">Ver produtos</a>
+          <a class="btn ghost" href="#mercados">Conhecer mercados</a>
+        </div>
+      </div>
+      <div class="card center" style="padding:0;overflow:hidden">
+        <img src="https://idealqualidade.com.br/wp-content/uploads/2022/04/Marketing-digital-e-Comercio-Eletronico.png" alt="Mercado Online" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Novidades -->
+  <section class="mt-6">
+    <div class="flex">
+      <h2>Novidades para você</h2>
+    </div>
+    <div class="grid cols-3 mt-3">
+      <div class="card" style="padding:20px">
+        <h3>Entrega Expressa</h3>
+        <p>Receba suas compras em até 1 hora em regiões selecionadas.</p>
+      </div>
+      <div class="card" style="padding:20px">
+        <h3>Mercados parceiros</h3>
+        <p>Novos mercados cadastrados toda semana para ampliar suas opções.</p>
+      </div>
+      <div class="card" style="padding:20px">
+        <h3>Ofertas exclusivas</h3>
+        <p>Promoções especiais para clientes cadastrados no Valify.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mercados parceiros -->
+  <section id="mercados" class="mt-6">
+    <div class="flex">
+      <h2>Principais Mercados</h2>
+      <a class="right small" href="#" onclick="openLogin()">Ver produtos →</a>
+    </div>
+    <div class="grid cols-4 mt-3">
+      <a class="card center" style="padding:20px" href="#" onclick="openLogin()">Supermercado BomPreço</a>
+      <a class="card center" style="padding:20px" href="#" onclick="openLogin()">Mercado Central</a>
+      <a class="card center" style="padding:20px" href="#" onclick="openLogin()">Padaria Pão Quente</a>
+      <a class="card center" style="padding:20px" href="#" onclick="openLogin()">Hortifruti Natural</a>
+    </div>
+  </section>
+
+  <!-- Chamada final -->
+  <section class="mt-6">
+    <div class="card center" style="padding:40px">
+      <h2>Quer ver os produtos?</h2>
+      <p class="lead">Entre ou cadastre-se e descubra todas as ofertas disponíveis.</p>
+      <div class="mt-4 flex center">
+        <a class="btn" href="#" onclick="openLogin()">Entrar</a>
+        <a class="btn ghost" href="#" onclick="openRegister()">Cadastrar</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="brand"><div class="brand-badge">VF</div>Valify</div>
+      <p class="small mt-3">Seu mercado online com entrega rápida e produtos fresquinhos. Pague com cartão, Pix ou na entrega.</p>
+      <small>© 2025 Valify. Todos os direitos reservados.</small>
+    </div>
+    <div>
+      <h4>Institucional</h4>
+      <ul style="list-style:none;padding:0;margin:10px 0 0;line-height:1.9">
+        <li><a href="#">Sobre nós</a></li>
+        <li><a href="#">Trabalhe conosco</a></li>
+        <li><a href="#">Política de privacidade</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Ajuda</h4>
+      <ul style="list-style:none;padding:0;margin:10px 0 0;line-height:1.9">
+        <li><a href="cart.html">Carrinho</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+        <li><a href="#">Suporte</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+function openLogin(){
+  window.location.href = 'login.html';
+}
+function openRegister(){
+  window.location.href = 'login.html';
+}
+</script>
+
+</body>
+</html>

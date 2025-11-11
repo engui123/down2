@@ -1,0 +1,108 @@
+[
+  {
+    "id": "bananas",
+    "name": "Banana Nanica 1kg",
+    "price": 7.99,
+    "price_old": 9.99,
+    "category": "Hortifruti",
+    "img": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?q=80&w=1200&auto=format&fit=crop",
+    "tags": [
+      "Fresco",
+      "Oferta"
+    ],
+    "stock": 120,
+    "popular": 9.6
+  },
+  {
+    "id": "leite",
+    "name": "iphone Integral 1L",
+    "price": 4.89,
+    "price_old": 5.49,
+    "category": "Laticínios",
+    "img": "https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=1200&auto=format&fit=crop",
+    "tags": [
+      "Sem conservantes"
+    ],
+    "stock": 85,
+    "popular": 8.8
+  },
+  {
+    "id": "arroz",
+    "name": "Arroz Tipo 1 5kg",
+    "price": 24.9,
+    "price_old": 28.9,
+    "category": "Mercearia",
+    "img": "https://images.unsplash.com/photo-1615486363876-cc0ced6b2d3a?q=80&w=1200&auto=format&fit=crop",
+    "tags": [
+      "Grãos selecionados"
+    ],
+    "stock": 60,
+    "popular": 9.2
+  },
+  {
+    "id": "refrigerante",
+    "name": "Refrigerante Cola 2L",
+    "price": 7.49,
+    "price_old": 8.99,
+    "category": "Bebidas",
+    "img": "https://images.unsplash.com/photo-1554866585-cd94860890b7?q=80&w=1200&auto=format&fit=crop",
+    "tags": [
+      "Geladinho"
+    ],
+    "stock": 200,
+    "popular": 8.1
+  },
+  {
+    "id": "queijo",
+    "name": "Queijo Mussarela 500g",
+    "price": 22.5,
+    "price_old": 26.9,
+    "category": "Laticínios",
+    "img": "https://images.unsplash.com/photo-1604908176997-43163f7f2a8a?q=80&w=1200&auto=format&fit=crop",
+    "tags": [
+      "Fatiado"
+    ],
+    "stock": 45,
+    "popular": 9.0
+  },
+  {
+    "id": "tomate",
+    "name": "Tomate Italiano 500g",
+    "price": 5.99,
+    "price_old": 7.49,
+    "category": "Hortifruti",
+    "img": "https://images.unsplash.com/photo-1546470427-eae79b8f4275?q=80&w=1200&auto=format&fit=crop",
+    "tags": [
+      "Fresco",
+      "Selecionado"
+    ],
+    "stock": 140,
+    "popular": 8.9
+  },
+  {
+    "id": "cafe",
+    "name": "Café Torrado e Moído 500g",
+    "price": 17.9,
+    "price_old": 20.9,
+    "category": "Mercearia",
+    "img": "https://images.unsplash.com/photo-1509043759401-136742328bb3?q=80&w=1200&auto=format&fit=crop",
+    "tags": [
+      "Tradicional"
+    ],
+    "stock": 100,
+    "popular": 9.4
+  },
+  {
+    "id": "agua",
+    "name": "Água Mineral 1.5L",
+    "price": 2.99,
+    "price_old": 3.49,
+    "category": "Bebidas",
+    "img": "https://images.unsplash.com/photo-1587202372775-98927b5f2ee9?q=80&w=1200&auto=format&fit=crop",
+    "tags": [
+      "Sem gás"
+    ],
+    "stock": 300,
+    "popular": 8.3
+  }
+]

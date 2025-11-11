@@ -1,0 +1,117 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valify | Se junte a nós</title>
+    <link rel="icon" href="img/Logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/login.css">  
+    <script src="https://kit.fontawesome.com/947f917c3f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="content first-content" style="border: solid 2px purple">
+            <div class="first-column">
+                <h2 class="title title-primeiro">Seja bem-vindo!</h2>
+                <p class="descricao descricao-primeiro">Para se manter conectado com a gente</p>
+                <p class="descricao descricao-primeiro">faça o login com suas informações pessoais</p>
+                <button id="entrar" class="btn btn-primario">Entrar</button>
+            </div>
+            <div class="second-column">
+                <h2 class="title title-segundo">Crie sua conta</h2>
+
+                <div class="redes-socais">
+                    <ul class="lista-redesocial">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+
+                <p class="descricao descricao-segundo">Ou utilize seu e-mail para o registro</p>
+
+             <form id="form-cadastro" class="form" method="POST">
+                    <input type="hidden" name="acao" value="cadastro">
+
+                    <label class="label-input">
+                        <select id="select-tipo" name="tipo" required style="width: 100%; height: 45px; border: none; background-color: #ecf0f1; padding: 0 10px; color: #7f8c8d;">
+                            <option value="cliente">Cliente</option>
+                            <option value="empresa">Empresa</option>
+                        </select>
+                        <div class="label-input-iconDiv"><i class="fad fa-user-tag icon"></i></div>
+                    </label>
+
+                    <label class="label-input">
+                        <input type="text" name="nome" placeholder="Nome" required>
+                        <div class="label-input-iconDiv"><i class="fad fa-user icon"></i></div>
+                    </label>
+
+                    <label class="label-input">
+                        <input type="email" name="email" placeholder="Email" required>
+                        <div class="label-input-iconDiv"><i class="fad fa-envelope icon"></i></div>
+                    </label>
+
+                    <label class="label-input">
+                        <input type="password" name="senha" placeholder="Senha" required>
+                        <div class="label-input-iconDiv"><i class="fad fa-lock icon"></i></div>
+                    </label>
+
+                    <label class="label-input" id="cnpj-field" style="display: none;">
+                        <input type="text" name="cnpj" placeholder="CNPJ (Somente números)">
+                        <div class="label-input-iconDiv"><i class="fad fa-building icon"></i></div>
+                    </label>
+
+                    <div id="mensagem-cadastro" style="margin-bottom: 10px;"></div>
+
+                    <button class="btn btn-segundo" type="submit">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="content second-content">
+            <div class="first-column">
+                <h2 class="title title-primeiro">Olá amigo!</h2>
+                <p class="descricao descricao-primeiro">Insira seus dados pessoais</p>
+                <p class="descricao descricao-primeiro">e comece a jornada conosco</p>
+                <button id="cadastrar" class="btn btn-primario">Cadastrar</button>
+            </div>
+            <div class="second-column">
+                <h2 class="title title-segundo">Faça seu login</h2>
+
+                <div class="redes-socais">
+                    <ul class="lista-redesocial">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+
+                <p class="descricao descricao-segundo">Ou utilize sua conta de e-mail</p>
+
+                <form id="form-login" class="form" method="POST">
+                    <input type="hidden" name="acao" value="login">
+
+                    <label class="label-input">
+                        <input type="email" name="email" placeholder="Email" required>
+                        <div class="label-input-iconDiv"><i class="fad fa-envelope icon"></i></div>
+                    </label>
+
+                    <label class="label-input">
+                        <input type="password" name="senha" placeholder="Senha" required>
+                        <div class="label-input-iconDiv"><i class="fad fa-lock icon"></i></div>
+                    </label>
+
+                    <a class="senha" href="#">Esqueceu sua senha?</a>
+                    
+                    <div id="mensagem-login" style="margin-bottom: 10px;"></div>
+
+                    <button class="btn btn-segundo" type="submit">Entrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/login.js"></script>
+</body>
+</html>
